@@ -1,41 +1,38 @@
-import { sva } from "../../../styled-system/css/sva";
+import styled from "styled-components";
+import { theme } from "@/styles/theme";
 
-export const pokedexListStyles = sva({
-  slots: ["pokedexListWrapper", "pokedexListPokemonCardWrapper"],
-  base: {
-    pokedexListWrapper: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
-      padding: "4px",
-      backgroundColor: "identity.primary",
-      height: "100vh",
-      width: "100vw",
-      overflowY: "hidden",
-    },
-    pokedexListPokemonCardWrapper: {
-      display: "flex",
-      flexDirection: "row",
-      flexWrap: "wrap",
-      width: "100%",
-      height: "calc(100vh - 84px)",
-      gap: "10px",
-      padding: "10px",
-      backgroundColor: "grayscale.white",
-      justifyContent: "space-between",
-      alignContent: "flex-start",
-      borderRadius: "8px",
-      overflowY: "scroll",
+export const PokedexListWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px;
+  background-color: ${theme.colors.identity.primary};
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+`;
 
-      "&::-webkit-scrollbar": {
-        width: "12px",
-        borderRadius: "8px",
-      },
-      "&::-webkit-scrollbar-thumb": {
-        backgroundColor: "#888",
-        borderRadius: "6px",
-      },
-    },
-  },
-  variants: {},
-});
+export const PokedexListPokemonCardWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: calc(100vh - 84px);
+  gap: 10px;
+  padding: 10px;
+  background-color: ${theme.colors.grayscale.white};
+  justify-content: space-between;
+  align-content: flex-start;
+  border-radius: 8px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+  }
+`;

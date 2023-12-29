@@ -1,16 +1,15 @@
 import { useHomePage } from "@/hooks/Home/useHomePage";
 import { PokemonCard } from "./PokemonCard/PokemonCard";
-import { pokedexListStyles } from "./PokedexListHomePage.styles";
+import * as S from "./PokedexListHomePage.styles";
 import { PokedexListHeader } from "./PokedexListHeader/PokedexListHeader";
 
 export const PokedexListHomePage = () => {
-  const styles = pokedexListStyles();
   const { sortedPokemons } = useHomePage();
 
   return (
-    <div className={styles.pokedexListWrapper}>
+    <S.PokedexListWrapper>
       <PokedexListHeader />
-      <div className={styles.pokedexListPokemonCardWrapper}>
+      <S.PokedexListPokemonCardWrapper>
         {sortedPokemons.map((pokemonData) => (
           <PokemonCard
             key={pokemonData.id}
@@ -21,7 +20,7 @@ export const PokedexListHomePage = () => {
             pokemonImgAlt={pokemonData.name}
           />
         ))}
-      </div>
-    </div>
+      </S.PokedexListPokemonCardWrapper>
+    </S.PokedexListWrapper>
   );
 };
