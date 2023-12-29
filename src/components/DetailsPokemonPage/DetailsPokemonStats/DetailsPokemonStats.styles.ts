@@ -29,7 +29,7 @@ export const DetailsPokemonStatsAboutTitle = styled.h1<DetailsPokemonStatsProps>
   ${({ pokemonType, theme }) => css`
     font-size: 14px;
     font-weight: 700;
-    color: ${pokemonType
+    color: ${pokemonType && pokemonType !== "type"
       ? theme.colors.pokemonType[pokemonType]
       : theme.colors.grayscale.wireframe};
   `}

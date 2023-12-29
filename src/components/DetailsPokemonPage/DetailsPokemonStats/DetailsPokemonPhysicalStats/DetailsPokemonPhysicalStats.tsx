@@ -35,7 +35,7 @@ export const DetailsPokemonPhysicalStats = ({
       <div
         style={{
           borderLeft: "1px solid #E0E0E0",
-          height: "48px",
+          height: "64px",
           width: "1px",
         }}
       />
@@ -72,7 +72,7 @@ export const DetailsPokemonPhysicalStats = ({
       <div
         style={{
           borderLeft: "1px solid #E0E0E0",
-          height: "48px",
+          height: "64px",
           width: "1px",
         }}
       />

@@ -19,7 +19,6 @@ export const theme = {
       rock: "#B69E31",
       steel: "#B7B9D0",
       water: "#6493EB",
-      type: "#666666",
     },
     identity: {
       primary: "#DC0A2D",

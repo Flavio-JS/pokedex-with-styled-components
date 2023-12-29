@@ -9,7 +9,7 @@ export const DetailsPokemonStatsBarTitle = styled.h1<DetailsPokemonStatsProps>`
   ${({ pokemonType, theme }) => css`
     font-size: 10px;
     font-weight: 700;
-    color: ${pokemonType
+    color: ${pokemonType && pokemonType !== "type"
       ? theme.colors.pokemonType[pokemonType]
       : theme.colors.grayscale.wireframe};
   `}
@@ -27,7 +27,7 @@ export const DetailsPokemonStatsBarRowFull = styled.div<DetailsPokemonStatsProps
     width: 100%;
     height: 4px;
     opacity: 0.2;
-    background-color: ${pokemonType
+    background-color: ${pokemonType && pokemonType !== "type"
       ? theme.colors.pokemonType[pokemonType]
       : theme.colors.grayscale.wireframe};
   `}
@@ -36,7 +36,7 @@ export const DetailsPokemonStatsBarRowFull = styled.div<DetailsPokemonStatsProps
 export const DetailsPokemonStatsBarRow = styled.div<DetailsPokemonStatsProps>`
   ${({ pokemonType, theme }) => css`
     height: 4px;
-    background-color: ${pokemonType
+    background-color: ${pokemonType && pokemonType !== "type"
       ? theme.colors.pokemonType[pokemonType]
       : theme.colors.grayscale.wireframe};
   `}

@@ -13,8 +13,8 @@ export const DetailsPokemonWrapper = styled.div<DetailsPokemonWrapperProps>`
     padding: 4px;
     width: 100vw;
     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
-    background-color: ${pokemonType
-      ? theme.colors.grayscale.wireframe
-      : theme.colors.pokemonType[pokemonType]};
+    background-color: ${pokemonType && pokemonType !== "type"
+      ? theme.colors.pokemonType[pokemonType]
+      : theme.colors.grayscale.wireframe};
   `}
 `;

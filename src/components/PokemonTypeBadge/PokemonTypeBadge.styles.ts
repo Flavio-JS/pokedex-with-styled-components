@@ -9,7 +9,7 @@ export const PokemonTypeBadgeStylesWrapper = styled.div<PokemonTypeBadgeTypes>`
     font-size: 10px;
     font-weight: 700;
     border-radius: 10px;
-    background-color: ${pokemonType
+    background-color: ${pokemonType && pokemonType !== "type"
       ? `${theme.colors.pokemonType[pokemonType]}`
       : `${theme.colors.grayscale.medium}`};
   `}
