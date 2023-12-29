@@ -1,5 +1,5 @@
 import { PokemonTypeBadge } from "@/components/PokemonTypeBadge/PokemonTypeBadge";
-import { detailsPokemonStatsStyles } from "./DetailsPokemonStats.styles";
+import * as S from "./DetailsPokemonStats.styles";
 import { DetailsPokemonStatsTypes } from "./DetailsPokemonStats.types";
 import { DetailsPokemonStatsBar } from "./DetailsPokemonStatsBar/DetailsPokemonStatsBar";
 import { DetailsPokemonPhysicalStats } from "./DetailsPokemonPhysicalStats/DetailsPokemonPhysicalStats";
@@ -11,22 +11,22 @@ export const DetailsPokemonStats = ({
   stats,
   weight,
 }: DetailsPokemonStatsTypes) => {
-  const styles = detailsPokemonStatsStyles({ typeColor: types[0] });
-
   return (
-    <div className={styles.detailsPokemonStatsWrapper}>
-      <div className={styles.detailsPokemonStatsTypesWrapper}>
+    <S.DetailsPokemonStatsWrapper>
+      <S.DetailsPokemonStatsTypesWrapper>
         {types.map((type) => (
           <PokemonTypeBadge key={type} pokemonType={type} />
         ))}
-      </div>
-      <h1 className={styles.detailsPokemonStatsAboutTitle}>About</h1>
+      </S.DetailsPokemonStatsTypesWrapper>
+      <S.DetailsPokemonStatsAboutTitle pokemonType={types[0]}>
+        About
+      </S.DetailsPokemonStatsAboutTitle>
       <DetailsPokemonPhysicalStats
         abilities={abilities}
         height={height}
         weight={weight}
       />
       <DetailsPokemonStatsBar stats={stats} types={types} />
-    </div>
+    </S.DetailsPokemonStatsWrapper>
   );
 };

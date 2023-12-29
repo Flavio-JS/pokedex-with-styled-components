@@ -1,15 +1,7 @@
-import { sva } from "../../../../../styled-system/css";
+import styled from "styled-components";
 
-export const detailsPokemonPhysicalStatsStyles = sva({
-  slots: ["detailsPokemonPhysicalStatsWrapper"],
-  base: {
-    detailsPokemonPhysicalStatsWrapper: {
-      display: "flex",
-      justifyContent: "space-around",
-      width: "100%",
-    },
-  },
-  variants: {
-    typeColor: {},
-  },
-});
+export const DetailsPokemonPhysicalStatsWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;

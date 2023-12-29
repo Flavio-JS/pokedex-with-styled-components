@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { Icon } from "@/components/Icon/Icon";
-import { detailsPokemonImageStyles } from "./DetailsPokemonImage.styles";
+import * as S from "./DetailsPokemonImage.styles";
 import { DetailsPokemonImageTypes } from "./DetailsPokemonImage.types";
 
 export const DetailsPokemonImage = ({
@@ -9,8 +8,6 @@ export const DetailsPokemonImage = ({
   imgUrl,
   name,
 }: DetailsPokemonImageTypes) => {
-  const styles = detailsPokemonImageStyles();
-
   const router = useRouter();
 
   const handlePreviousPokemonClick = (pokemonId: number) => {
@@ -25,18 +22,16 @@ export const DetailsPokemonImage = ({
     return void router.push(`/pokemon/${pokemonId + 1}`);
   };
   return (
-    <div className={styles.detailsPokemonImageWrapper}>
-      <button
-        className={styles.detailsPokemonImagePreviousAndNextButton}
+    <S.DetailsPokemonImageWrapper>
+      <S.DetailsPokemonImagePreviousAndNextButton
         type="button"
         aria-label="Pokemon anterior"
         onClick={() => handlePreviousPokemonClick(id)}
       >
         <Icon iconName="ChevronLeftIcon" />
-      </button>
+      </S.DetailsPokemonImagePreviousAndNextButton>
 
-      <Image
-        className={styles.detailsPokemonImage}
+      <S.DetailsPokemonImage
         alt={name}
         width={180}
         height={180}
@@ -44,14 +39,13 @@ export const DetailsPokemonImage = ({
         priority
       />
 
-      <button
-        className={styles.detailsPokemonImagePreviousAndNextButton}
+      <S.DetailsPokemonImagePreviousAndNextButton
         type="button"
         aria-label="Próximo pokemon"
         onClick={() => handleNextPokemonClick(id)}
       >
         <Icon iconName="ChevronRightIcon" />
-      </button>
-    </div>
+      </S.DetailsPokemonImagePreviousAndNextButton>
+    </S.DetailsPokemonImageWrapper>
   );
 };
