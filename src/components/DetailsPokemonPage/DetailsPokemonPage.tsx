@@ -1,6 +1,6 @@
 import { usePokemonById } from "@/hooks/api/usePokemon";
 import { useRouter } from "next/router";
-import { detailsPokemonPageStyles } from "./DetailsPokemonPage.styles";
+import * as S from "./DetailsPokemonPage.styles";
 import { DetailsPokemonHeader } from "./DetailsPokemonHeader/DetailsPokemonHeader";
 import { DetailsPokemonImage } from "./DetailsPokemonImage/DetailsPokemonImage";
 import { DetailsPokemonStats } from "./DetailsPokemonStats/DetailsPokemonStats";
@@ -11,13 +11,9 @@ export const DetailsPokemonPage = () => {
 
   const { data: pokemonData, isError, isLoading } = usePokemonById(Number(id));
 
-  const styles = detailsPokemonPageStyles({
-    backgroundTypeColor: pokemonData?.types[0],
-  });
-
   if (isError)
     return (
-      <div className={styles.detailsPokemonWrapper}>
+      <S.DetailsPokemonWrapper pokemonType="type">
         <DetailsPokemonHeader name="Error" number="000" />
         <DetailsPokemonImage
           id={0}
@@ -38,12 +34,12 @@ export const DetailsPokemonPage = () => {
           types={["type"]}
           weight={0}
         />
-      </div>
+      </S.DetailsPokemonWrapper>
     );
 
   if (isLoading)
     return (
-      <div className={styles.detailsPokemonWrapper}>
+      <S.DetailsPokemonWrapper pokemonType="type">
         <DetailsPokemonHeader name="Loading..." number="000" />
         <DetailsPokemonImage
           id={0}
@@ -64,13 +60,13 @@ export const DetailsPokemonPage = () => {
           types={["type"]}
           weight={0}
         />
-      </div>
+      </S.DetailsPokemonWrapper>
     );
 
   return (
     <>
       {pokemonData && (
-        <div className={styles.detailsPokemonWrapper}>
+        <S.DetailsPokemonWrapper pokemonType={pokemonData.types[0]}>
           <DetailsPokemonHeader
             name={pokemonData.name}
             number={pokemonData.number}
@@ -87,7 +83,7 @@ export const DetailsPokemonPage = () => {
             types={pokemonData.types}
             weight={pokemonData.weight}
           />
-        </div>
+        </S.DetailsPokemonWrapper>
       )}
     </>
   );
