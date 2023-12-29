@@ -1,9 +1,8 @@
-import { theme } from "@/styles/theme";
 import styled, { css } from "styled-components";
 import { PokemonTypeBadgeTypes } from "./PokemonTypeBadge.types";
 
 export const PokemonTypeBadgeStylesWrapper = styled.div<PokemonTypeBadgeTypes>`
-  ${({ pokemonType }) => css`
+  ${({ pokemonType, theme }) => css`
     height: 20px;
     width: min-content;
     padding: 2px 8px;

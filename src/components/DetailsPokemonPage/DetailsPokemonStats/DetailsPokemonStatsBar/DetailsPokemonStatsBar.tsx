@@ -1,116 +1,128 @@
-import { css } from "../../../../../styled-system/css";
 import { DetailsPokemonStatsBarTypes } from "./DetailPokemonStatsBar.types";
-import { detailsPokemonStatsBarStyles } from "./DetailsPokemonStatsBar.styles";
+import * as S from "./DetailsPokemonStatsBar.styles";
 
 export const DetailsPokemonStatsBar = ({
   stats,
   types,
 }: DetailsPokemonStatsBarTypes) => {
-  const styles = detailsPokemonStatsBarStyles({ typeColor: types[0] });
   return (
     <div
-      className={css({
+      style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         gap: "16px",
         width: "100%",
-      })}
+      }}
     >
-      <h1 className={styles.detailsPokemonStatsBarTitle}>Base Stats</h1>
-      <div className={styles.detailsPokemonStatsBarWrapper}>
+      <S.DetailsPokemonStatsBarTitle pokemonType={types[0]}>
+        Base Stats
+      </S.DetailsPokemonStatsBarTitle>
+      <S.DetailsPokemonStatsBarWrapper>
         <div
-          className={css({
+          style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-          })}
+          }}
         >
-          <span className={styles.detailsPokemonStatsBarTitle}>HP</span>
-          <span className={styles.detailsPokemonStatsBarTitle}>ATK</span>
-          <span className={styles.detailsPokemonStatsBarTitle}>DEF</span>
-          <span className={styles.detailsPokemonStatsBarTitle}>SATK</span>
-          <span className={styles.detailsPokemonStatsBarTitle}>SDEF</span>
-          <span className={styles.detailsPokemonStatsBarTitle}>SPD</span>
+          <S.DetailsPokemonStatsBarTitle pokemonType={types[0]}>
+            HP
+          </S.DetailsPokemonStatsBarTitle>
+          <S.DetailsPokemonStatsBarTitle pokemonType={types[0]}>
+            ATK
+          </S.DetailsPokemonStatsBarTitle>
+          <S.DetailsPokemonStatsBarTitle pokemonType={types[0]}>
+            DEF
+          </S.DetailsPokemonStatsBarTitle>
+          <S.DetailsPokemonStatsBarTitle pokemonType={types[0]}>
+            SATK
+          </S.DetailsPokemonStatsBarTitle>
+          <S.DetailsPokemonStatsBarTitle pokemonType={types[0]}>
+            SDEF
+          </S.DetailsPokemonStatsBarTitle>
+          <S.DetailsPokemonStatsBarTitle pokemonType={types[0]}>
+            SPD
+          </S.DetailsPokemonStatsBarTitle>
         </div>
         <div
-          className={css({
+          style={{
             borderLeft: "1px solid #E0E0E0",
             height: "96px",
             width: "1px",
-          })}
+          }}
         />
         <div
-          className={css({
+          style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-          })}
+          }}
         >
-          <span className={css({ fontSize: "10px" })}>{stats.hp}</span>
-          <span className={css({ fontSize: "10px" })}>{stats.atk}</span>
-          <span className={css({ fontSize: "10px" })}>{stats.def}</span>
-          <span className={css({ fontSize: "10px" })}>{stats.satk}</span>
-          <span className={css({ fontSize: "10px" })}>{stats.sdef}</span>
-          <span className={css({ fontSize: "10px" })}>{stats.spd}</span>
+          <span style={{ fontSize: "10px" }}>{stats.hp}</span>
+          <span style={{ fontSize: "10px" }}>{stats.atk}</span>
+          <span style={{ fontSize: "10px" }}>{stats.def}</span>
+          <span style={{ fontSize: "10px" }}>{stats.satk}</span>
+          <span style={{ fontSize: "10px" }}>{stats.sdef}</span>
+          <span style={{ fontSize: "10px" }}>{stats.spd}</span>
         </div>
         <div
-          className={css({
+          style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-around",
             width: "100%",
-          })}
+          }}
         >
-          <div className={css({ display: "flex" })}>
-            <div
-              className={styles.detailsPokemonStatsBarRow}
+          <div style={{ display: "flex" }}>
+            <S.DetailsPokemonStatsBarRow
+              pokemonType={types[0]}
               style={{ minWidth: `${(stats.hp * 100) / 255}%` }}
             />
-            <div className={styles.detailsPokemonStatsBarRowFull} />
+            <S.DetailsPokemonStatsBarRowFull pokemonType={types[0]} />
           </div>
 
-          <div className={css({ display: "flex" })}>
-            <div
-              className={styles.detailsPokemonStatsBarRow}
+          <div style={{ display: "flex" }}>
+            <S.DetailsPokemonStatsBarRow
+              pokemonType={types[0]}
               style={{ minWidth: `${(stats.atk * 100) / 255}%` }}
             />
-            <div className={styles.detailsPokemonStatsBarRowFull} />
+            <S.DetailsPokemonStatsBarRowFull pokemonType={types[0]} />
           </div>
 
-          <div className={css({ display: "flex" })}>
-            <div
-              className={styles.detailsPokemonStatsBarRow}
+          <div style={{ display: "flex" }}>
+            <S.DetailsPokemonStatsBarRow
+              pokemonType={types[0]}
               style={{ minWidth: `${(stats.def * 100) / 255}%` }}
             />
-            <div className={styles.detailsPokemonStatsBarRowFull} />
+            <S.DetailsPokemonStatsBarRowFull pokemonType={types[0]} />
           </div>
 
-          <div className={css({ display: "flex" })}>
-            <div
-              className={styles.detailsPokemonStatsBarRow}
+          <div style={{ display: "flex" }}>
+            <S.DetailsPokemonStatsBarRow
+              pokemonType={types[0]}
               style={{ minWidth: `${(stats.satk * 100) / 255}%` }}
             />
-            <div className={styles.detailsPokemonStatsBarRowFull} />
+            <S.DetailsPokemonStatsBarRowFull pokemonType={types[0]} />
           </div>
 
-          <div className={css({ display: "flex" })}>
-            <div
-              className={styles.detailsPokemonStatsBarRow}
+          <div style={{ display: "flex" }}>
+            <S.DetailsPokemonStatsBarRow
+              pokemonType={types[0]}
               style={{ minWidth: `${(stats.sdef * 100) / 255}%` }}
             />
-            <div className={styles.detailsPokemonStatsBarRowFull} />
+            <S.DetailsPokemonStatsBarRowFull pokemonType={types[0]} />
           </div>
 
-          <div className={css({ display: "flex" })}>
-            <div
-              className={styles.detailsPokemonStatsBarRow}
+          <div style={{ display: "flex" }}>
+            <S.DetailsPokemonStatsBarRow
+              pokemonType={types[0]}
               style={{ minWidth: `${(stats.spd * 100) / 255}%` }}
             />
-            <div className={styles.detailsPokemonStatsBarRowFull} />
+            <S.DetailsPokemonStatsBarRowFull pokemonType={types[0]} />
           </div>
         </div>
-      </div>
+      </S.DetailsPokemonStatsBarWrapper>
     </div>
   );
 };

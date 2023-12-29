@@ -1,33 +1,27 @@
-import { sva } from "../../../../styled-system/css";
+import Image from "next/image";
+import styled from "styled-components";
 
-export const detailsPokemonImageStyles = sva({
-  slots: [
-    "detailsPokemonImageWrapper",
-    "detailsPokemonImage",
-    "detailsPokemonImagePreviousAndNextButton",
-  ],
-  base: {
-    detailsPokemonImageWrapper: {
-      display: "flex",
-      minHeight: "144px",
-      justifyContent: "space-between",
-      alignItems: "flex-end",
-      padding: "0 16px 0 16px",
-    },
-    detailsPokemonImage: {
-      position: "absolute",
-      top: "80px",
-      left: "50%",
-      transform: "translateX(-50%)",
-      zIndex: "999",
-    },
-    detailsPokemonImagePreviousAndNextButton: {
-      marginBottom: "20px",
+export const DetailsPokemonImageWrapper = styled.div`
+  display: flex;
+  min-height: 144px;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 16px 0 16px;
+`;
 
-      "&:hover": {
-        cursor: "pointer",
-      },
-    },
-  },
-  variants: {},
-});
+export const DetailsPokemonImage = styled(Image)`
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+`;
+
+export const DetailsPokemonImagePreviousAndNextButton = styled.button`
+  all: unset;
+  margin-bottom: 20px;
+
+  :hover {
+    cursor: pointer;
+  }
+`;

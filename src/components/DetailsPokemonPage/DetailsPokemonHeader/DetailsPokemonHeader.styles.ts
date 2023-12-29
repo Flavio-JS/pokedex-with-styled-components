@@ -1,27 +1,29 @@
-import { sva } from "../../../../styled-system/css";
+import styled, { css } from "styled-components";
 
-export const detailsPokemonHeaderStyles = sva({
-  slots: [
-    "detailsPokemonHeaderWrapper",
-    "detailsPokemonHeaderH1",
-    "detailsPokemonHeaderH2",
-  ],
-  base: {
-    detailsPokemonHeaderWrapper: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "16px 16px 20px 16px",
-      color: "grayscale.white",
-    },
-    detailsPokemonHeaderH1: {
-      fontSize: "24px",
-      fontWeight: "700",
-    },
-    detailsPokemonHeaderH2: {
-      fontSize: "12px",
-      fontWeight: "700",
-    },
-  },
-  variants: {},
-});
+export const DetailsPokemonHeaderWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 16px 20px 16px;
+    color: ${theme.colors.grayscale.white};
+
+    button {
+      all: unset;
+
+      :hover {
+        cursor: pointer;
+      }
+    }
+  `}
+`;
+
+export const DetailsPokemonHeaderH1 = styled.h1`
+  font-size: 24px;
+  font-weight: 700;
+`;
+
+export const DetailsPokemonHeaderH2 = styled.h2`
+  font-size: 12px;
+  font-weight: 700;
+`;

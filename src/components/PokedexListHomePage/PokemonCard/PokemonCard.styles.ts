@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { theme } from "@/styles/theme";
+import styled, { css } from "styled-components";
 import Image from "next/image";
 
 export const PokemonCardWrapper = styled.div`
@@ -37,11 +36,13 @@ export const PokemonImage = styled(Image)`
 `;
 
 export const PokemonNameWrapper = styled.div`
-  text-align: center;
-  padding: 24px 8px 4px 8px;
-  background-color: ${theme.colors.grayscale.background};
-  font-size: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  ${({ theme }) => css`
+    text-align: center;
+    padding: 24px 8px 4px 8px;
+    background-color: ${theme.colors.grayscale.background};
+    font-size: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  `}
 `;
