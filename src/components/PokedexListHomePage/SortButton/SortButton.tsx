@@ -1,18 +1,15 @@
 import { useHomePage } from "@/hooks/Home/useHomePage";
 import { Icon } from "../../Icon/Icon";
-import { sortButtonStyles } from "./SortButton.styles";
+import * as S from "./SortButton.styles";
 import { useSortButton } from "../../../hooks/SortButton/useSortButton";
 
 export const SortButton = () => {
   const { handleClick } = useSortButton();
   const { sortByNumberOrName } = useHomePage();
 
-  const styles = sortButtonStyles({ sort: sortByNumberOrName });
-
   return (
-    <button
+    <S.SortButtonWrapper
       type="button"
-      className={styles.SortButtonWrapper}
       onClick={() => handleClick()}
       aria-label={
         sortByNumberOrName === "number"
@@ -27,6 +24,6 @@ export const SortButton = () => {
             : "SortByNameIcon"
         }
       />
-    </button>
+    </S.SortButtonWrapper>
   );
 };
