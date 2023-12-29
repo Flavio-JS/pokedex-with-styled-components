@@ -1,21 +1,20 @@
-import { Icon } from "../../Icon/Icon";
-import { TextFieldStyles } from "./TextField.styles";
-import { useTextField } from "../../../hooks/TextField/useTextField";
+import { Icon } from "@/components/Icon/Icon";
+import { useTextField } from "@/hooks/TextField/useTextField";
+import { ChangeEvent } from "react";
+import * as S from "./TextField.styles";
 
 export const TextField = () => {
-  const styles = TextFieldStyles();
   const { searchTerm, handleInputChange, handleClick } = useTextField();
 
   return (
-    <div className={styles.TextFieldWrapper}>
+    <S.TextFieldWrapper>
       <Icon iconName="SearchIcon" />
-      <input
-        className={styles.TextFieldInput}
+      <S.TextFieldInput
         type="text"
         name="text"
         value={searchTerm}
         placeholder="Search"
-        onChange={(e) => handleInputChange(e)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange(e)}
       />
 
       <button
@@ -25,6 +24,6 @@ export const TextField = () => {
       >
         <Icon iconName="XIcon" />
       </button>
-    </div>
+    </S.TextFieldWrapper>
   );
 };

@@ -1,28 +1,34 @@
-import { sva } from "../../../../styled-system/css/sva";
+import { theme } from "@/styles/theme";
+import styled from "styled-components";
 
-export const TextFieldStyles = sva({
-  slots: ["TextFieldWrapper", "TextFieldInput"],
-  base: {
-    TextFieldWrapper: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "flex-start",
-      width: "100%",
-      maxWidth: "200px",
-      padding: "8px 16px 8px 12px",
-      borderRadius: "16px",
-      boxShadow: "0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset",
-      gap: "8px",
-      backgroundColor: "grayscale.white",
-    },
-    TextFieldInput: {
-      all: "unset",
-      maxWidth: "120px",
+export const TextFieldWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 200px;
+  padding: 8px 16px 8px 12px;
+  border-radius: 16px;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+  gap: 8px;
+  background-color: ${theme.colors.grayscale.white};
 
-      "&:focus-visible": {
-        outline: "none",
-      },
-    },
-  },
-  variants: {},
-});
+  button {
+    all: unset;
+    display: flex;
+    align-items: center;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+export const TextFieldInput = styled.input`
+  all: unset;
+  max-width: 120px;
+
+  :focus-visible {
+    outline: none;
+  }
+`;

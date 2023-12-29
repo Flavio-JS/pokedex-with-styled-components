@@ -1,23 +1,19 @@
-import { sva } from "../../../../styled-system/css/sva";
+import styled from "styled-components";
+import { theme } from "@/styles/theme";
 
-export const sortButtonStyles = sva({
-  slots: ["SortButtonWrapper"],
-  base: {
-    SortButtonWrapper: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      boxShadow: "0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset",
-      padding: "8px",
-      borderRadius: "50%",
-      width: "32px",
-      height: "32px",
-      backgroundColor: "grayscale.white",
+export const SortButtonWrapper = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: ${theme.colors.grayscale.white};
 
-      "&:hover": {
-        cursor: "pointer",
-      },
-    },
-  },
-  variants: {},
-});
+  &:hover {
+    cursor: pointer;
+  }
+`;

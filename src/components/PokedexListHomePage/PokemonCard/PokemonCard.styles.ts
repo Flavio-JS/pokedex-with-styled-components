@@ -17,12 +17,12 @@ export const PokemonCardWrapper = styled.div`
 `;
 
 export const PokemonNumberWrapper = styled.div`
-  display: "flex";
-  justify-content: "end";
-  height: "12px";
-  width: "100%";
-  padding: "4px 8px 0 8px";
-  font-size: "8px";
+  display: flex;
+  justify-content: end;
+  height: 12px;
+  width: 100%;
+  padding: 4px 8px 0 8px;
+  font-size: 8px;
 `;
 
 export const PokemonImageWrapper = styled.div`

@@ -1,32 +1,25 @@
-import { sva } from "../../../../styled-system/css/sva";
+import styled from "styled-components";
+import { theme } from "@/styles/theme";
 
-export const pokedexListHeaderStyles = sva({
-  slots: [
-    "pokedexListHeaderWrapper",
-    "pokedexListHeaderFilterWrapper",
-    "pokedexListHeaderSortWrapper",
-  ],
-  base: {
-    pokedexListHeaderWrapper: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
-      padding: "12px 12px 24px 12px",
-      backgroundColor: "identity.primary",
-      width: "100%",
-    },
-    pokedexListHeaderFilterWrapper: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      width: "100%",
-    },
-    pokedexListHeaderSortWrapper: {
-      display: "flex",
-      gap: "8px",
-      alignItems: "center",
-      color: "grayscale.white",
-    },
-  },
-  variants: {},
-});
+export const PokedexListHeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 12px 24px 12px;
+  background-color: ${theme.colors.identity.primary};
+  width: 100%;
+`;
+
+export const PokedexListHeaderFilterWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+export const PokedexListHeaderSortWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: ${theme.colors.grayscale.white};
+`;

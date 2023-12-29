@@ -1,17 +1,16 @@
 import { SortButton } from "../SortButton/SortButton";
 import { TextField } from "../TextField/TextField";
-import { pokedexListHeaderStyles } from "./PokedexListHeader.styles";
+import * as S from "./PokedexListHeader.styles";
 
 export const PokedexListHeader = () => {
-  const styles = pokedexListHeaderStyles();
   return (
-    <div className={styles.pokedexListHeaderWrapper}>
-      <div className={styles.pokedexListHeaderFilterWrapper}>
+    <S.PokedexListHeaderWrapper>
+      <S.PokedexListHeaderFilterWrapper>
         <TextField />
-        <div className={styles.pokedexListHeaderSortWrapper}>
+        <S.PokedexListHeaderSortWrapper>
           Order by: <SortButton />
-        </div>
-      </div>
-    </div>
+        </S.PokedexListHeaderSortWrapper>
+      </S.PokedexListHeaderFilterWrapper>
+    </S.PokedexListHeaderWrapper>
   );
 };
