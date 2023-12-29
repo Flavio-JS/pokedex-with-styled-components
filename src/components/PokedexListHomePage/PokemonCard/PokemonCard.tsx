@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { KeyboardEvent } from "react";
 import { PokemonCardDataTypes } from "./PokemonCard.types";
-import { pokemonCardStyles } from "./PokemonCard.styles";
+import * as S from "./PokemonCard.styles";
 
 export const PokemonCard = ({
   pokemonId,
@@ -11,7 +10,6 @@ export const PokemonCard = ({
   pokemonImgAlt,
   pokemonName,
 }: PokemonCardDataTypes) => {
-  const styles = pokemonCardStyles();
   const router = useRouter();
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -21,25 +19,23 @@ export const PokemonCard = ({
   };
 
   return (
-    <div
-      className={styles.pokemonCardWrapper}
+    <S.PokemonCardWrapper
       onClick={() => router.push(`/pokemon/${pokemonId}`)}
-      onKeyDown={(e) => handleKeyDown(e)}
+      onKeyDown={(e: KeyboardEvent<HTMLDivElement>) => handleKeyDown(e)}
       role="button"
       tabIndex={0}
     >
-      <div className={styles.pokemonNumberWrapper}>#{pokemonNumber}</div>
-      <div className={styles.pokemonImageWrapper}>
-        <Image
-          className={styles.pokemonImage}
+      <S.PokemonNumberWrapper>#{pokemonNumber}</S.PokemonNumberWrapper>
+      <S.PokemonImageWrapper>
+        <S.PokemonImage
           alt={pokemonImgAlt}
           width={72}
           height={72}
           src={pokemonImgUrl}
         />
-      </div>
+      </S.PokemonImageWrapper>
 
-      <div className={styles.pokemonNameWrapper}>{pokemonName}</div>
-    </div>
+      <S.PokemonNameWrapper>{pokemonName}</S.PokemonNameWrapper>
+    </S.PokemonCardWrapper>
   );
 };
